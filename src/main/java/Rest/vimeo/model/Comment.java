@@ -1,4 +1,4 @@
-package Rest.Client.model;
+package Rest.vimeo.model;
 
 import java.util.List;
 

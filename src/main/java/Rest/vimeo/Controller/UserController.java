@@ -1,4 +1,4 @@
-package Rest.Client.Controller;
+package Rest.vimeo.Controller;
 
 public class UserController {
 }

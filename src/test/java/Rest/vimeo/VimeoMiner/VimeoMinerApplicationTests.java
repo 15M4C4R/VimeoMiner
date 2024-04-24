@@ -1,4 +1,4 @@
-package Rest.Client.VimeoMiner;
+package Rest.vimeo.VimeoMiner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,13 +1,13 @@
-package Rest.Client.model;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package Rest.vimeo.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Channel {
+public class Video {
 
     @JsonProperty("uri")
     private String uri;
@@ -16,8 +16,18 @@ public class Channel {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("created_time")
-    private String createdTime;
+    @JsonProperty("release_time")
+    private String releaseTime;
+
+    private String id = List.of(this.uri.split("/")).get(-1);
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("name")
     public String getName() {
@@ -39,30 +49,20 @@ public class Channel {
         this.description = description;
     }
 
-    @JsonProperty("created_time")
-    public String getCreatedTime() {
-        return createdTime;
+    @JsonProperty("release_time")
+    public String getReleaseTime() {
+        return releaseTime;
     }
 
-    @JsonProperty("created_time")
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
-    }
-
-    private String id = List.of(this.uri.split("/")).get(-1);
-
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id){
-        this.id =id;
+    @JsonProperty("release_time")
+    public void setReleaseTime(String releaseTime) {
+        this.releaseTime = releaseTime;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Channel.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Video.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -75,9 +75,9 @@ public class Channel {
         sb.append('=');
         sb.append(((this.description == null)?"<null>":this.description));
         sb.append(',');
-        sb.append("link");
+        sb.append("releaseTime");
         sb.append('=');
-        sb.append(((this.createdTime == null)?"<null>":this.createdTime));
+        sb.append(((this.releaseTime == null)?"<null>":this.releaseTime));
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {
@@ -87,3 +87,4 @@ public class Channel {
     }
 
 }
+
