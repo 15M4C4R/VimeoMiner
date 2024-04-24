@@ -11,5 +11,4 @@ public class Comment {
     private String uri;
 
     @JsonProperty("text")
-
 }
