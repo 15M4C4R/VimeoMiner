@@ -49,10 +49,11 @@ public class Channel {
         this.createdTime = createdTime;
     }
 
-    private String id = List.of(this.uri.split("/")).get(-1);
+    @JsonProperty
+    private String id;
 
     public String getId() {
-        return this.id;
+        return List.of(this.uri.split("/")).get(-1);
     }
 
     public void setId(String id){

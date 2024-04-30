@@ -19,10 +19,10 @@ public class Video {
     @JsonProperty("release_time")
     private String releaseTime;
 
-    private String id = List.of(this.uri.split("/")).get(-1);
+    private String id;
 
     public String getId() {
-        return id;
+        return List.of(this.uri.split("/")).get(-1);
     }
 
     public void setId(String id) {
