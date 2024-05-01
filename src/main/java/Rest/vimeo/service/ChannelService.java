@@ -23,12 +23,6 @@ public class ChannelService {
 
     private String token = "81b11cb93a69116057336e2958a4566b";
 
-    public List<Channel> findAllChannels(){
-        String uri = "https://api.vimeo.com/channels?page=1&per_page=10";
-        HttpHeaders headers = new HttpHeaders();
-
-    }
-
     public Channel findOne(String id){
         Channel channel = null;
         String uri = "https://api.vimeo.com/channels/"+id;
@@ -38,6 +32,7 @@ public class ChannelService {
         ResponseEntity<Channel> response =
                 restTemplate.exchange(uri, HttpMethod.GET,request,Channel.class);
         channel = response.getBody();
+        channel.setVideos(videoService.findVideosChannel(channel.getId()));
         return channel;
     }
 
@@ -48,10 +43,6 @@ public class ChannelService {
         HttpEntity<Channel> request = new HttpEntity<>(channel, headers);
         ResponseEntity<Channel> response =
                 restTemplate.exchange(uri, HttpMethod.PUT,request,Channel.class);
-    }
-
-    public List<Video> getVideos(String id){
-        return videoService.findVideosChannel(id);
     }
 
 }

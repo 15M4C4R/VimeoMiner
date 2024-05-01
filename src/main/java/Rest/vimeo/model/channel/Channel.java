@@ -1,5 +1,6 @@
 package Rest.vimeo.model.channel;
 
+import Rest.vimeo.model.video.Video;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -18,6 +19,10 @@ public class Channel {
 
     @JsonProperty("created_time")
     private String createdTime;
+
+    private String id;
+
+    private List<Video> videos;
 
     @JsonProperty("name")
     public String getName() {
@@ -49,16 +54,15 @@ public class Channel {
         this.createdTime = createdTime;
     }
 
-    @JsonProperty
-    private String id;
-
     public String getId() {
         return List.of(this.uri.split("/")).get(-1);
     }
 
-    public void setId(String id){
-        this.id =id;
-    }
+    public void setId(String id){ this.id =id;}
+
+    public List<Video> getVideos() { return videos;}
+
+    public void setVideos(List<Video> videos) {this.videos = videos;}
 
     @Override
     public String toString() {
