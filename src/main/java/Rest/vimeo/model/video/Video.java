@@ -22,7 +22,8 @@ public class Video {
     private String id;
 
     public String getId() {
-        return List.of(this.uri.split("/")).get(-1);
+        List<String> aux = List.of(this.uri.split("/"));
+        return aux.get(aux.size()-1);
     }
 
     public void setId(String id) {
