@@ -1,5 +1,5 @@
 
-package Rest.vimeo.model;
+package Rest.vimeo.model.user;
 
 import java.util.List;
 

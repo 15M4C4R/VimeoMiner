@@ -1,5 +1,6 @@
-package Rest.vimeo.model;
+package Rest.vimeo.model.comment;
 
+import Rest.vimeo.model.comment.Comment;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

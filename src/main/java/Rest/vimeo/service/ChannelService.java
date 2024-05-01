@@ -1,7 +1,7 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.Channel;
-import Rest.vimeo.model.Video;
+import Rest.vimeo.model.channel.Channel;
+import Rest.vimeo.model.video.Video;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 

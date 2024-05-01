@@ -1,4 +1,4 @@
-package Rest.vimeo.model;
+package Rest.vimeo.model.comment;
 
 import java.util.List;
 

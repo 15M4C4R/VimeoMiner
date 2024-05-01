@@ -1,4 +1,4 @@
-package Rest.vimeo.model;
+package Rest.vimeo.model.user;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

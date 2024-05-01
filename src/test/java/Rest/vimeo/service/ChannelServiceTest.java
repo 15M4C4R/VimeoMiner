@@ -1,6 +1,6 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.Channel;
+import Rest.vimeo.model.channel.Channel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

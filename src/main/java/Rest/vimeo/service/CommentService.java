@@ -1,8 +1,7 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.Comment;
-import Rest.vimeo.model.CommentList;
-import org.aspectj.weaver.patterns.HasMemberTypePatternForPerThisMatching;
+import Rest.vimeo.model.comment.Comment;
+import Rest.vimeo.model.comment.CommentList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

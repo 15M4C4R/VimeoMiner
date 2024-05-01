@@ -1,13 +1,13 @@
-package Rest.vimeo.model;
+package Rest.vimeo.model.channel;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Video {
+public class Channel {
 
     @JsonProperty("uri")
     private String uri;
@@ -16,18 +16,8 @@ public class Video {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("release_time")
-    private String releaseTime;
-
-    private String id;
-
-    public String getId() {
-        return List.of(this.uri.split("/")).get(-1);
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    @JsonProperty("created_time")
+    private String createdTime;
 
     @JsonProperty("name")
     public String getName() {
@@ -49,20 +39,31 @@ public class Video {
         this.description = description;
     }
 
-    @JsonProperty("release_time")
-    public String getReleaseTime() {
-        return releaseTime;
+    @JsonProperty("created_time")
+    public String getCreatedTime() {
+        return createdTime;
     }
 
-    @JsonProperty("release_time")
-    public void setReleaseTime(String releaseTime) {
-        this.releaseTime = releaseTime;
+    @JsonProperty("created_time")
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    @JsonProperty
+    private String id;
+
+    public String getId() {
+        return List.of(this.uri.split("/")).get(-1);
+    }
+
+    public void setId(String id){
+        this.id =id;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Video.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Channel.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -75,9 +76,9 @@ public class Video {
         sb.append('=');
         sb.append(((this.description == null)?"<null>":this.description));
         sb.append(',');
-        sb.append("releaseTime");
+        sb.append("link");
         sb.append('=');
-        sb.append(((this.releaseTime == null)?"<null>":this.releaseTime));
+        sb.append(((this.createdTime == null)?"<null>":this.createdTime));
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {
@@ -87,4 +88,3 @@ public class Video {
     }
 
 }
-

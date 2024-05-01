@@ -1,6 +1,6 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.Caption;
+import Rest.vimeo.model.caption.Caption;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

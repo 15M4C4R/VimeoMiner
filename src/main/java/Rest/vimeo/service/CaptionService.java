@@ -1,9 +1,8 @@
 package Rest.vimeo.service;
 
 
-import Rest.vimeo.model.Caption;
-import Rest.vimeo.model.CaptionList;
-import Rest.vimeo.model.Video;
+import Rest.vimeo.model.caption.Caption;
+import Rest.vimeo.model.caption.CaptionList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
