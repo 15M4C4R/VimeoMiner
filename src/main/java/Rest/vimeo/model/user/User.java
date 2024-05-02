@@ -20,9 +20,9 @@ public class User {
     @JsonProperty("pictures")
     private Pictures pictures;
 
-    private String picture_link = pictures.getBaseLink();
+    private String picture_link;
 
-    private String id = List.of(this.uri.split("/")).get(-1);
+    private String id;
 
     @JsonProperty("uri")
     public String getUri() {
@@ -65,15 +65,15 @@ public class User {
     }
 
     public String getId() {
-        return this.id;
+        List<String> aux = List.of(this.uri.split("/"));
+        return aux.get(aux.size()-1);
     }
-
     public void setId(String id) {
-        this.id =id;
+        this.id = id;
     }
 
     public String getPicture_link() {
-        return this.picture_link;
+        return pictures.getBaseLink();
     }
 
     public void setPicture_link(String picture_link) {

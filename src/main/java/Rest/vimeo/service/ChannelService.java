@@ -19,6 +19,8 @@ import java.util.List;
 public class ChannelService {
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
     VideoService videoService;
 
     private String token = "81b11cb93a69116057336e2958a4566b";

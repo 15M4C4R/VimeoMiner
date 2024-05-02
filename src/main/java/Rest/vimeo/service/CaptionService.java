@@ -19,7 +19,6 @@ public class CaptionService {
     @Autowired
     RestTemplate restTemplate;
 
-
     private final String token = "81b11cb93a69116057336e2958a4566b";
 
     public List<Caption> findCaptionsVideo(String idVideo){

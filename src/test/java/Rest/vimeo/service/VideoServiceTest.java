@@ -16,8 +16,8 @@ class VideoServiceTest {
     VideoService videoService;
 
     @Test
-    void findAll() {
-        List<Video> videos= videoService.findAll("newyorker");
+    void findVideosChannel() {
+        List<Video> videos= videoService.findVideosChannel("newyorker");
         assertFalse(videos==null, "Videos is empty");
         System.out.println(videos);
     }

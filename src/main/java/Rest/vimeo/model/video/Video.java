@@ -2,6 +2,8 @@ package Rest.vimeo.model.video;
 
 import java.util.List;
 
+import Rest.vimeo.model.caption.Caption;
+import Rest.vimeo.model.comment.Comment;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,6 +22,26 @@ public class Video {
     private String releaseTime;
 
     private String id;
+
+    public List<Caption> getCaptions() {
+        return captions;
+    }
+
+    public void setCaptions(List<Caption> captions) {
+        this.captions = captions;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    private List<Caption> captions;
+
+    private List<Comment> comments;
 
     public String getId() {
         List<String> aux = List.of(this.uri.split("/"));
@@ -86,6 +108,4 @@ public class Video {
         }
         return sb.toString();
     }
-
 }
-

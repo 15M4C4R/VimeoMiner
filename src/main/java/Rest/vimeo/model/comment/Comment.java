@@ -26,10 +26,6 @@ public class Comment {
     @JsonProperty("created_on")
     private String created_on;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @JsonProperty("text")
     public void setText(String text) {
         this.text = text;
@@ -43,6 +39,10 @@ public class Comment {
     public String getId() {
         List<String> aux = List.of(uri.split("/"));
         return aux.get(aux.size()-1);
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @JsonProperty("text")

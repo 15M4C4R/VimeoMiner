@@ -4,6 +4,7 @@ import Rest.vimeo.model.video.Video;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -55,7 +56,8 @@ public class Channel {
     }
 
     public String getId() {
-        return List.of(this.uri.split("/")).get(-1);
+        List<String> aux = List.of(this.uri.split("/"));
+        return aux.get(aux.size()-1);
     }
 
     public void setId(String id){ this.id =id;}
