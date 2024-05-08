@@ -18,6 +18,7 @@ public class Comment {
 
     @JsonProperty("uri")
     private String uri;
+
     private String id;
 
     @JsonProperty("text")
