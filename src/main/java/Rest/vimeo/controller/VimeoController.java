@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping("/api/vimeoMiner")
+@RequestMapping("/vimeominer")
 public class VimeoController {
     @Autowired
     ChannelService service;
@@ -18,7 +18,9 @@ public class VimeoController {
     RestTemplate restTemplate;
     final String videoMinerUri = "http://localhost:8080/api/videoMiner/videos";
     @GetMapping("/{id}")
-    public Channel getChannel(@PathVariable String id) {
+    public Channel getChannel(@PathVariable String id,
+                              @RequestParam(required = false,defaultValue = "10") int maxVideos,
+                              @RequestParam(required = false,defaultValue = "10") int maxComments) {
         return service.findOne(id);
     }
     @PostMapping("/{id}")

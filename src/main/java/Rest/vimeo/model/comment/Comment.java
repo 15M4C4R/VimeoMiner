@@ -2,30 +2,24 @@ package Rest.vimeo.model.comment;
 
 import java.util.List;
 
-import Rest.vimeo.model.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Comment {
-
-    @JsonProperty("user")
-    private User user;
-
-    public User getUser() { return user; }
-
-    public void setUser(User user) {this.user = user;}
-
     @JsonProperty("uri")
     private String uri;
-
-    private String id;
+    private String id ;
 
     @JsonProperty("text")
     private String text;
 
     @JsonProperty("created_on")
     private String created_on;
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @JsonProperty("text")
     public void setText(String text) {
@@ -38,12 +32,8 @@ public class Comment {
     }
 
     public String getId() {
-        List<String> aux = List.of(uri.split("/"));
-        return aux.get(aux.size()-1);
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        List<String> partes = List.of(uri.split("/"));
+        return partes.get(partes.size()-1);
     }
 
     @JsonProperty("text")
