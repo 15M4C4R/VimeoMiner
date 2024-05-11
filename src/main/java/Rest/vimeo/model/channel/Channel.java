@@ -45,12 +45,12 @@ public class Channel {
         this.description = description;
     }
 
-    @JsonProperty("created_time")
+    @JsonProperty("createdTime")
     public String getCreatedTime() {
         return createdTime;
     }
 
-    @JsonProperty("created_time")
+    @JsonProperty("createdTime")
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
