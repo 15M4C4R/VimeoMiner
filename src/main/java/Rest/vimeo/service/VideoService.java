@@ -40,7 +40,7 @@ public class VideoService {
         List<Video> videos1 = new ArrayList<>();
         for(Video v: videos){
             v.setCaptions(captionService.findCaptionsVideo(v.getId()));
-            v.setComments(commentService.findAllComments(v.getId()));
+            v.setComments(commentService.findAllComments(v.getId(), 10));
             videos1.add(v);
         }
         return videos1;

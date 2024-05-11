@@ -14,7 +14,7 @@ public class Comment {
     @JsonProperty("text")
     private String text;
 
-    @JsonProperty("created_on")
+    @JsonProperty("createdOn")
     private String created_on;
 
     public void setId(String id) {
@@ -26,7 +26,7 @@ public class Comment {
         this.text = text;
     }
 
-    @JsonProperty("created_on")
+    @JsonProperty("createdOn")
     public void setCreated_on(String created_on) {
         this.created_on = created_on;
     }
@@ -41,7 +41,7 @@ public class Comment {
         return text;
     }
 
-    @JsonProperty("created_on")
+    @JsonProperty("createdOn")
     public String getCreated_on() {
         return created_on;
     }
@@ -51,7 +51,7 @@ public class Comment {
         return "Comment{" +
                 "id='" + id + '\'' +
                 ", text='" + text + '\'' +
-                ", created_on='" + created_on + '\'' +
+                ", createdOn='" + created_on + '\'' +
                 '}';
     }
 

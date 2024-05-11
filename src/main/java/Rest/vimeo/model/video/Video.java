@@ -18,7 +18,7 @@ public class Video {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("release_time")
+    @JsonProperty("releaseTime")
     private String releaseTime;
 
     private String id;
@@ -72,12 +72,12 @@ public class Video {
         this.description = description;
     }
 
-    @JsonProperty("release_time")
+    @JsonProperty("releaseTime")
     public String getReleaseTime() {
         return releaseTime;
     }
 
-    @JsonProperty("release_time")
+    @JsonProperty("releaseTime")
     public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
     }
