@@ -1,15 +1,14 @@
-package Rest.vimeo.model.channel;
+package Rest.vimeo.model.Vimeo.channel;
 
-import Rest.vimeo.model.video.Video;
+import Rest.vimeo.model.Vimeo.video.VideoVimeo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Channel {
+public class ChannelVimeo {
 
     @JsonProperty("uri")
     private String uri;
@@ -18,12 +17,12 @@ public class Channel {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     private String createdTime;
 
     private String id;
 
-    private List<Video> videos;
+    private List<VideoVimeo> videos;
 
     @JsonProperty("name")
     public String getName() {
@@ -45,12 +44,12 @@ public class Channel {
         this.description = description;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public String getCreatedTime() {
         return createdTime;
     }
 
-    @JsonProperty("createdTime")
+    @JsonProperty("created_time")
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
@@ -62,14 +61,14 @@ public class Channel {
 
     public void setId(String id){ this.id =id;}
 
-    public List<Video> getVideos() { return videos;}
+    public List<VideoVimeo> getVideos() { return videos;}
 
-    public void setVideos(List<Video> videos) {this.videos = videos;}
+    public void setVideos(List<VideoVimeo> videos) {this.videos = videos;}
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Channel.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(ChannelVimeo.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -82,7 +81,7 @@ public class Channel {
         sb.append('=');
         sb.append(((this.description == null)?"<null>":this.description));
         sb.append(',');
-        sb.append("link");
+        sb.append("created_time");
         sb.append('=');
         sb.append(((this.createdTime == null)?"<null>":this.createdTime));
         if (sb.charAt((sb.length()- 1)) == ',') {

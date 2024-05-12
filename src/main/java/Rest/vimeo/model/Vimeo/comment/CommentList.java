@@ -1,6 +1,5 @@
-package Rest.vimeo.model.comment;
+package Rest.vimeo.model.Vimeo.comment;
 
-import Rest.vimeo.model.comment.Comment;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -12,13 +11,13 @@ import java.util.List;
 public class CommentList {
 
     @JsonProperty("data")
-    private List<Comment> data;
+    private List<CommentVimeo> data;
 
-    public List<Comment> getData() {
+    public List<CommentVimeo> getData() {
         return data;
     }
 
-    public void setData(List<Comment> data) {
+    public void setData(List<CommentVimeo> data) {
         this.data = data;
     }
 

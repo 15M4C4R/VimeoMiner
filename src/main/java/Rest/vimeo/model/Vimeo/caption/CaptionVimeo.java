@@ -1,8 +1,8 @@
-package Rest.vimeo.model.caption;
+package Rest.vimeo.model.Vimeo.caption;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Caption {
+public class CaptionVimeo {
 
     @JsonProperty("id")
     private String id;

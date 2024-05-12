@@ -1,15 +1,14 @@
-package Rest.vimeo.model.video;
+package Rest.vimeo.model.Vimeo.video;
 
 import java.util.List;
 
-import Rest.vimeo.model.caption.Caption;
-import Rest.vimeo.model.comment.Comment;
+import Rest.vimeo.model.Vimeo.caption.CaptionVimeo;
+import Rest.vimeo.model.Vimeo.comment.CommentVimeo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
-public class Video {
+public class VideoVimeo {
 
     @JsonProperty("uri")
     private String uri;
@@ -17,31 +16,30 @@ public class Video {
     private String name;
     @JsonProperty("description")
     private String description;
-
-    @JsonProperty("releaseTime")
+    @JsonProperty("release_time")
     private String releaseTime;
 
     private String id;
 
-    public List<Caption> getCaptions() {
+    public List<CaptionVimeo> getCaptions() {
         return captions;
     }
 
-    public void setCaptions(List<Caption> captions) {
+    public void setCaptions(List<CaptionVimeo> captions) {
         this.captions = captions;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(List<CommentVimeo> comments) {
         this.comments = comments;
     }
 
-    public List<Comment> getComments() {
+    public List<CommentVimeo> getComments() {
         return comments;
     }
 
-    private List<Caption> captions;
+    private List<CaptionVimeo> captions;
 
-    private List<Comment> comments;
+    private List<CommentVimeo> comments;
 
     public String getId() {
         List<String> aux = List.of(this.uri.split("/"));
@@ -72,12 +70,12 @@ public class Video {
         this.description = description;
     }
 
-    @JsonProperty("releaseTime")
+    @JsonProperty("release_time")
     public String getReleaseTime() {
         return releaseTime;
     }
 
-    @JsonProperty("releaseTime")
+    @JsonProperty("release_time")
     public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
     }
@@ -85,7 +83,7 @@ public class Video {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Video.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(VideoVimeo.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -98,7 +96,7 @@ public class Video {
         sb.append('=');
         sb.append(((this.description == null)?"<null>":this.description));
         sb.append(',');
-        sb.append("releaseTime");
+        sb.append("release_time");
         sb.append('=');
         sb.append(((this.releaseTime == null)?"<null>":this.releaseTime));
         if (sb.charAt((sb.length()- 1)) == ',') {

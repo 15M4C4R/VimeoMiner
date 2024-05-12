@@ -1,4 +1,4 @@
-package Rest.vimeo.model.video;
+package Rest.vimeo.model.Vimeo.video;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,13 +10,13 @@ import java.util.List;
 public class VideoList {
 
     @JsonProperty("data")
-    private List<Video> data;
+    private List<VideoVimeo> data;
 
-    public List<Video> getData() {
+    public List<VideoVimeo> getData() {
         return data;
     }
 
-    public void setData(List<Video> data) {
+    public void setData(List<VideoVimeo> data) {
         this.data = data;
     }
 

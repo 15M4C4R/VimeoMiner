@@ -1,6 +1,5 @@
-package Rest.vimeo.model.caption;
+package Rest.vimeo.model.Vimeo.caption;
 
-import Rest.vimeo.model.caption.Caption;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,10 +10,10 @@ import java.util.List;
 public class CaptionList {
 
     @JsonProperty("data")
-    private List<Caption> data;
+    private List<CaptionVimeo> data;
 
-    public List<Caption> getData() { return data;}
+    public List<CaptionVimeo> getData() { return data;}
 
-    public void setData(List<Caption> data) { this.data = data;}
+    public void setData(List<CaptionVimeo> data) { this.data = data;}
 
 }
