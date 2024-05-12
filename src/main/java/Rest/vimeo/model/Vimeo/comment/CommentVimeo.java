@@ -1,12 +1,14 @@
-package Rest.vimeo.model.comment;
+package Rest.vimeo.model.Vimeo.comment;
 
 import java.util.List;
 
+import Rest.vimeo.model.Video.Video;
+import Rest.vimeo.model.Vimeo.user.UserVimeo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Comment {
+public class CommentVimeo {
     @JsonProperty("uri")
     private String uri;
     private String id ;
@@ -14,8 +16,11 @@ public class Comment {
     @JsonProperty("text")
     private String text;
 
-    @JsonProperty("createdOn")
-    private String created_on;
+    @JsonProperty("created_on")
+    private String createdOn;
+
+    @JsonProperty("user")
+    private UserVimeo user;
 
     public void setId(String id) {
         this.id = id;
@@ -26,9 +31,14 @@ public class Comment {
         this.text = text;
     }
 
-    @JsonProperty("createdOn")
-    public void setCreated_on(String created_on) {
-        this.created_on = created_on;
+    @JsonProperty("created_on")
+    public String getCreatedOn() {
+        return createdOn;
+    }
+
+    @JsonProperty("created_on")
+    public void setCreatedOn(String createdOn) {
+        this.createdOn = createdOn;
     }
 
     public String getId() {
@@ -36,22 +46,24 @@ public class Comment {
         return partes.get(partes.size()-1);
     }
 
+    @JsonProperty("user")
+    public UserVimeo getUser(){ return user; }
+
+    @JsonProperty("user")
+    public void setUser(UserVimeo user){ this.user = user; }
+
     @JsonProperty("text")
     public String getText() {
         return text;
     }
 
-    @JsonProperty("createdOn")
-    public String getCreated_on() {
-        return created_on;
-    }
 
     @Override
     public String toString() {
         return "Comment{" +
                 "id='" + id + '\'' +
                 ", text='" + text + '\'' +
-                ", createdOn='" + created_on + '\'' +
+                ", created_on='" + createdOn + '\'' +
                 '}';
     }
 

@@ -1,28 +1,26 @@
 
-package Rest.vimeo.model.user;
-
-import java.util.List;
+package Rest.vimeo.model.Vimeo.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class User {
+public class UserVimeo {
 
     @JsonProperty("uri")
     private String uri;
     @JsonProperty("name")
     private String name;
     @JsonProperty("link")
-    private String link;
+    private String user_link;
     //private String user_link = getLink();
     @JsonProperty("pictures")
     private Pictures pictures;
 
     private String picture_link;
 
-    private String id;
+    private Long id;
 
     @JsonProperty("uri")
     public String getUri() {
@@ -46,12 +44,12 @@ public class User {
 
     @JsonProperty("link")
     public String getLink() {
-        return link;
+        return user_link;
     }
 
     @JsonProperty("link")
     public void setLink(String link) {
-        this.link = link;
+        this.user_link = link;
     }
 
     @JsonProperty("pictures")
@@ -64,11 +62,10 @@ public class User {
         this.pictures = pictures;
     }
 
-    public String getId() {
-        List<String> aux = List.of(this.uri.split("/"));
-        return aux.get(aux.size()-1);
+    public Long getId() {
+        return Long.valueOf(this.getUri().replace("/users/", ""));
     }
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -83,7 +80,7 @@ public class User {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(User.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(UserVimeo.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("uri");
         sb.append('=');
         sb.append(((this.uri == null)?"<null>":this.uri));
@@ -94,7 +91,7 @@ public class User {
         sb.append(',');
         sb.append("link");
         sb.append('=');
-        sb.append(((this.link == null)?"<null>":this.link));
+        sb.append(((this.user_link == null)?"<null>":this.user_link));
         sb.append(',');
         sb.append("pictures");
         sb.append('=');

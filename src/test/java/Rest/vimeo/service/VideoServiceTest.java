@@ -1,6 +1,6 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.video.Video;
+import Rest.vimeo.model.Vimeo.video.VideoVimeo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +17,7 @@ class VideoServiceTest {
 
     @Test
     void findVideosChannel() {
-        List<Video> videos= videoService.findVideosChannel("newyorker");
+        List<VideoVimeo> videos= videoService.findVideosChannel("newyorker", 5, 5);
         assertFalse(videos==null, "Videos is empty");
         System.out.println(videos);
     }

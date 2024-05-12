@@ -1,8 +1,8 @@
 package Rest.vimeo.service;
 
 
-import Rest.vimeo.model.caption.Caption;
-import Rest.vimeo.model.caption.CaptionList;
+import Rest.vimeo.model.Vimeo.caption.CaptionVimeo;
+import Rest.vimeo.model.Vimeo.caption.CaptionList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -21,7 +21,7 @@ public class CaptionService {
 
     private final String token = "81b11cb93a69116057336e2958a4566b";
 
-    public List<Caption> findCaptionsVideo(String idVideo){
+    public List<CaptionVimeo> findCaptionsVideo(String idVideo){
         String uri = "https://api.vimeo.com/videos/"+idVideo+"/texttracks";
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization","Bearer "+this.token);

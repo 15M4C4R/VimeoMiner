@@ -1,6 +1,6 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.caption.Caption;
+import Rest.vimeo.model.Vimeo.caption.CaptionVimeo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +17,7 @@ class CaptionServiceTest {
 
     @Test
     void findCaptions() {
-        List<Caption> captions = captionService.findCaptionsVideo("781632604");
+        List<CaptionVimeo> captions = captionService.findCaptionsVideo("781632604");
         assertFalse(captions==null, "Captions is empty");
         System.out.println(captions);
     }

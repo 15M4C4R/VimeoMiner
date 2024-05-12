@@ -1,7 +1,7 @@
 package Rest.vimeo.service;
 
-import Rest.vimeo.model.comment.Comment;
-import Rest.vimeo.model.comment.CommentList;
+import Rest.vimeo.model.Vimeo.comment.CommentVimeo;
+import Rest.vimeo.model.Vimeo.comment.CommentList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -20,8 +20,8 @@ public class CommentService {
 
     private final String token = "81b11cb93a69116057336e2958a4566b";
 
-    public List<Comment> findAllComments(String idVideo){
-        String uri = "https://api.vimeo.com/videos/"+idVideo+"/comments";
+    public List<CommentVimeo> findAllComments(String idVideo, int maxComments){
+        String uri = "https://api.vimeo.com/videos/"+idVideo+"/comments?page=1&per_page=" + maxComments;
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization","Bearer "+this.token);
         HttpEntity<CommentList> request = new HttpEntity<>(null,headers);
@@ -30,20 +30,20 @@ public class CommentService {
         return response.getBody().getData();
     }
 
-    public Comment findComment(String idVideo, String idComment){
+    public CommentVimeo findComment(String idVideo, String idComment){
         String uri = "https://api.vimeo.com/videos/"+idVideo+"/comments/"+idComment;
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization","Bearer "+this.token);
-        HttpEntity<Comment> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Comment> response =
-                restTemplate.exchange(uri, HttpMethod.GET,request,Comment.class);
+        HttpEntity<CommentVimeo> request = new HttpEntity<>(null, headers);
+        ResponseEntity<CommentVimeo> response =
+                restTemplate.exchange(uri, HttpMethod.GET,request, CommentVimeo.class);
         return response.getBody();
     }
 
-    public void setComment(String idVideo, Comment comment){
+    public void setComment(String idVideo, CommentVimeo comment){
         String uri = "uri de videoMiner";
-        HttpEntity<Comment> request = new HttpEntity<>(comment);
-        restTemplate.exchange(uri, HttpMethod.PUT,request,Comment.class);
+        HttpEntity<CommentVimeo> request = new HttpEntity<>(comment);
+        restTemplate.exchange(uri, HttpMethod.PUT,request, CommentVimeo.class);
 
     }
 
